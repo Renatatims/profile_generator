@@ -88,11 +88,11 @@ async function init() {
 		profilesTeam.push(manager)
 		}
 	if (userAnswers.role === "Engineer"){
-		const engineer = new Engineer (userAnswers.name, userAnswers.id, userAnswers.email, userAnswers.officeNumber)
+		const engineer = new Engineer (userAnswers.name, userAnswers.id, userAnswers.email, userAnswers.gitHub)
 		profilesTeam.push(engineer)
 	}
 	if (userAnswers.role === "Intern"){
-		const intern = new Intern (userAnswers.name, userAnswers.id, userAnswers.email, userAnswers.officeNumber)
+		const intern = new Intern (userAnswers.name, userAnswers.id, userAnswers.email, userAnswers.school)
 		profilesTeam.push(intern)
 	}
 	if (userAnswers.questionAdd === "Add one more employee"){

@@ -12,7 +12,7 @@ function generateProfiles(data) {
       </div>
       <ul class="list-group list-group-flush">
           <li class="list-group-item">ID: ${manager.getId()}</li>
-          <li class="list-group-item">e-mail: ${manager.getEmail()}</li>
+          <li class="list-group-item">e-mail: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
           <li class="list-group-item">Office Number: ${manager.getOfficeNumber()}</li>
       </ul>
   </div>
@@ -31,8 +31,8 @@ function generateProfiles(data) {
   </div>
   <ul class="list-group list-group-flush">
       <li class="list-group-item">ID: ${engineer.getId()}</li>
-      <li class="list-group-item">e-mail: ${engineer.getEmail()}</li>
-      <li class="list-group-item">GitHub: ${engineer.getGithub()}</li>
+      <li class="list-group-item">e-mail: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
+      <li class="list-group-item">GitHub: <a href="https://github.com/${engineer.getGithub()}" target="_blank">${engineer.getGithub()}</a></li>
   </ul>
 </div>
 </div>
@@ -50,7 +50,7 @@ function generateProfiles(data) {
   </div>
   <ul class="list-group list-group-flush">
       <li class="list-group-item">ID: ${intern.getId()}</li>
-      <li class="list-group-item">e-mail: ${intern.getEmail()}</li>
+      <li class="list-group-item">e-mail: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
       <li class="list-group-item">School: ${intern.getSchool()}</li>
   </ul>
 </div>
@@ -82,7 +82,7 @@ function generateProfiles(data) {
 // Generate full html with Manager's, Engineer's and Intern's cards - depending on the user's choice
 function profileCards(data) {
   return `
-    <!DOCTYPE html>
+  <!DOCTYPE html>
   <html lang="en">
   
   <head>
