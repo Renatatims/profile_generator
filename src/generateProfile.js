@@ -1,82 +1,87 @@
-function generateProfiles (data){
+// Generate Profiles function
+function generateProfiles(data) {
 
-function generateManager (manager) {
-  return `
+  // Generate Manager Function
+  function generateManager(manager) {
+    return `
   <div class=" cardT col-sm-4">
   <div class="card " style="width: 16rem;">
       <div class="card-header" style="height: 5rem;">
          ${manager.getName()}
-         ${manager.getRole()}
+      <p> Position: ${manager.getRole()}</p>
       </div>
       <ul class="list-group list-group-flush">
-          <li class="list-group-item"> ${manager.getId()}</li>
-          <li class="list-group-item">${manager.getEmail()}</li>
-          <li class="list-group-item">${manager.getOfficeNumber()}</li>
+          <li class="list-group-item">ID: ${manager.getId()}</li>
+          <li class="list-group-item">e-mail: ${manager.getEmail()}</li>
+          <li class="list-group-item">Office Number: ${manager.getOfficeNumber()}</li>
       </ul>
   </div>
 </div>
 `;
-};
+  };
 
-function generateEngineer (engineer) {
-  return `
+  // Generate Engineer Function
+  function generateEngineer(engineer) {
+    return `
 <div class=" cardT col-sm-4">
 <div class="card " style="width: 16rem;">
   <div class="card-header" style="height: 5rem;">
      ${engineer.getName()}
-     ${engineer.getRole()}
+  <p> Position: ${engineer.getRole()}</p>
   </div>
   <ul class="list-group list-group-flush">
-      <li class="list-group-item"> ${engineer.getId()}</li>
-      <li class="list-group-item">${engineer.getEmail()}</li>
-      <li class="list-group-item">${engineer.getGithub()}</li>
+      <li class="list-group-item">ID: ${engineer.getId()}</li>
+      <li class="list-group-item">e-mail: ${engineer.getEmail()}</li>
+      <li class="list-group-item">GitHub: ${engineer.getGithub()}</li>
   </ul>
 </div>
 </div>
 `;
-};
+  };
 
-function generateIntern (intern) {
-  return `
+  //Generate Intern Function
+  function generateIntern(intern) {
+    return `
 <div class=" cardT col-sm-4">
 <div class="card " style="width: 16rem;">
   <div class="card-header" style="height: 5rem;">
-     ${intern.getName()}
-     ${intern.getRole()}
+    ${intern.getName()}
+  <p> Position: ${intern.getRole()}</p>
   </div>
   <ul class="list-group list-group-flush">
-      <li class="list-group-item"> ${intern.getId()}</li>
-      <li class="list-group-item">${intern.getEmail()}</li>
-      <li class="list-group-item">${intern.getSchool()}</li>
+      <li class="list-group-item">ID: ${intern.getId()}</li>
+      <li class="list-group-item">e-mail: ${intern.getEmail()}</li>
+      <li class="list-group-item">School: ${intern.getSchool()}</li>
   </ul>
 </div>
 </div>
 `;
-};
+  };
 
-profilesArray =[];
+  // Profiles Array + Filter and Join the card to the html file
+  profilesArray = [];
 
-profilesArray.push (data
-  .filter (employee => employee.getRole() === "Manager")
-  .map (manager => generateManager (manager))
+  profilesArray.push(data
+    .filter(employee => employee.getRole() === "Manager")
+    .map(manager => generateManager(manager))
   );
-  profilesArray.push (data
-    .filter (employee => employee.getRole() === "Engineer")
-    .map (engineer => generateEngineer (engineer))
-    );
-    profilesArray.push (data
-      .filter (employee => employee.getRole() === "Intern")
-      .map (intern => generateIntern (intern))
-      );
-  
-      return profilesArray.join ("");
+  profilesArray.push(data
+    .filter(employee => employee.getRole() === "Engineer")
+    .map(engineer => generateEngineer(engineer))
+  );
+  profilesArray.push(data
+    .filter(employee => employee.getRole() === "Intern")
+    .map(intern => generateIntern(intern))
+  );
+
+  return profilesArray.join("");
 
 
 }
 
-
-function profileCards (data) {
-    return `
+// Generate full html with Manager's, Engineer's and Intern's cards - depending on the user's choice
+function profileCards(data) {
+  return `
     <!DOCTYPE html>
   <html lang="en">
   
@@ -102,11 +107,8 @@ function profileCards (data) {
       </header>
 
       <div class="row" id="cardsTeam">
-  
-    <div class=" cardT col-sm-4">
-    ${generateProfiles(data)}
-    
-    </div>
+      ${generateProfiles(data)}         
+      </div>
       
       </body>
   
