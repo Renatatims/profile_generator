@@ -1,5 +1,6 @@
+function generateProfiles (data){
 
-const generateManager = manager => {
+function generateManager (manager) {
   return `
   <div class=" cardT col-sm-4">
   <div class="card " style="width: 16rem;">
@@ -17,7 +18,7 @@ const generateManager = manager => {
 `;
 };
 
-const generateEngineer = engineer => {
+function generateEngineer (engineer) {
   return `
 <div class=" cardT col-sm-4">
 <div class="card " style="width: 16rem;">
@@ -28,14 +29,14 @@ const generateEngineer = engineer => {
   <ul class="list-group list-group-flush">
       <li class="list-group-item"> ${engineer.getId()}</li>
       <li class="list-group-item">${engineer.getEmail()}</li>
-      <li class="list-group-item">${engineer.getGitHub()}</li>
+      <li class="list-group-item">${engineer.getGithub()}</li>
   </ul>
 </div>
 </div>
 `;
 };
 
-const generateIntern = intern => {
+function generateIntern (intern) {
   return `
 <div class=" cardT col-sm-4">
 <div class="card " style="width: 16rem;">
@@ -52,6 +53,26 @@ const generateIntern = intern => {
 </div>
 `;
 };
+
+profilesArray =[];
+
+profilesArray.push (data
+  .filter (employee => employee.getRole() === "Manager")
+  .map (manager => generateManager (manager))
+  );
+  profilesArray.push (data
+    .filter (employee => employee.getRole() === "Engineer")
+    .map (engineer => generateEngineer (engineer))
+    );
+    profilesArray.push (data
+      .filter (employee => employee.getRole() === "Intern")
+      .map (intern => generateIntern (intern))
+      );
+  
+      return profilesArray.join ("");
+
+
+}
 
 
 function profileCards (data) {
@@ -83,9 +104,8 @@ function profileCards (data) {
       <div class="row" id="cardsTeam">
   
     <div class=" cardT col-sm-4">
-    ${generateManager()}
-    ${generateEngineer()}
-    ${generateIntern()}
+    ${generateProfiles(data)}
+    
     </div>
       
       </body>
