@@ -11,7 +11,7 @@ const questions = [
 		type: 'list',
 		message: "Please select the employee you would like to add to your team",
 		choices: ["Manager", "Engineer", "Intern"],
-		name: 'questionAdd'
+		name: 'role'
 
 	},
 	{
@@ -33,16 +33,25 @@ const questions = [
 		type: 'input',
 		message: "What is the manager's office number?",
 		name: 'officeNumber',
+		when: function (answer){
+			return answer.role === "Manager";
+		}
 	},
 	{
 		type: 'input',
 		message: "What is the engineer's gitHub?",
 		name: 'gitHub',
+		when: function (answer){
+			return answer.role === "Engineer";
+		}
 	},
 	{
 		type: 'input',
 		message: "What is the intern's school?",
 		name: 'school',
+		when: function (answer){
+			return answer.role === "Intern";
+		}
 	},
 	{
 		type: 'input',
