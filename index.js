@@ -6,6 +6,9 @@ const Manager = require ("./lib/Manager");
 const Engineer = require ("./lib/Engineer");
 const Intern = require ("./lib/Intern");
 
+
+const profilesTeam = [];
+
 const questions = [
 	{
 		type: 'list',
@@ -54,14 +57,14 @@ const questions = [
 		}
 	},
 	{
-		type: 'input',
-		message: "Please enter a name for this file",
-		name: 'file'
+		type: 'list',
+		message: "Please select another employee",
+		choices: ["Add one more employee", "No more additions"],
+		name: 'questionAdd',
 	},
 ]
 
 // User Input Function - return answers
-
 function userInput() {
 	return inquirer.prompt(questions);
 
@@ -69,15 +72,20 @@ function userInput() {
 
 // Function to write README file
 function writeToFile(file, data) {
-	fs.writeFile(`${file}.html`, data, (err) => {
-		err ? console.log(err) : console.log(`Your ${file}.html was generated!`);
+	fs.writeFile("file.html", data, (err) => {
+		err ? console.log(err) : console.log("Your" + file + "was generated!");
 	})
 };
 
 // Function to initialize the application
 async function init() {
 	let userAnswers = await userInput();
-	writeToFile((userAnswers.file), (profileCards(userAnswers)));
+	if (userAnswers.questionAdd === "Add one more employee"){
+		init ();
+	} else {
+		writeToFile((userAnswers.file), (profileCards(userAnswers)));
+	}
+	
 }
 
 // Call init to initialize application
