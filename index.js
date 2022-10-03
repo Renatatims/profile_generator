@@ -7,7 +7,6 @@ const Engineer = require ("./lib/Engineer");
 const Intern = require ("./lib/Intern");
 
 
-const profilesTeam = [];
 
 const questions = [
 	{
@@ -77,13 +76,29 @@ function writeToFile(file, data) {
 	})
 };
 
+// Array for Team profiles 
+
+const profilesTeam = [];
+
 // Function to initialize the application
 async function init() {
 	let userAnswers = await userInput();
+	if (userAnswers.role === "Manager"){
+		const manager = new Manager(userAnswers.name, userAnswers.id, userAnswers.email, userAnswers.officeNumber)
+		profilesTeam.push(manager)
+		}
+	if (userAnswers.role === "Engineer"){
+		const engineer = new Engineer (userAnswers.name, userAnswers.id, userAnswers.email, userAnswers.officeNumber)
+		profilesTeam.push(engineer)
+	}
+	if (userAnswers.role === "Intern"){
+		const intern = new Intern (userAnswers.name, userAnswers.id, userAnswers.email, userAnswers.officeNumber)
+		profilesTeam.push(intern)
+	}
 	if (userAnswers.questionAdd === "Add one more employee"){
 		init ();
 	} else {
-		writeToFile((userAnswers.file), (profileCards(userAnswers)));
+		writeToFile((profilesTeam.file), (profileCards(profilesTeam)));
 	}
 	
 }
