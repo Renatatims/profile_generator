@@ -6,3 +6,25 @@
    margin-bottom:30px;
     
 }
+
+#cardsTeam{
+    margin:20px;
+    padding: 5px;
+
+}
+
+.card {
+    padding: 5px;
+}
+.cardT {
+    display: flex;
+    justify-content:space-around;
+    padding: 5px;
+}
+
+.card-header{
+    background-color: rgba(165, 165, 233, 0.986);
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+}
