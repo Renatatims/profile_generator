@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const profileCards = require ('./src/generateProfile')
 
 const questions = [
 	{
@@ -45,3 +46,11 @@ function writeToFile(file, data) {
 	})
 };
 
+// Function to initialize the application
+async function init() {
+	let userAnswers = await userInput();
+	writeToFile((userAnswers.file), (profileCards(userAnswers)));
+}
+
+// Call init to initialize application
+init();
