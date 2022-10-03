@@ -1,3 +1,59 @@
+
+const generateManager = manager => {
+  return `
+  <div class=" cardT col-sm-4">
+  <div class="card " style="width: 16rem;">
+      <div class="card-header" style="height: 5rem;">
+         ${manager.getName()}
+         ${manager.getRole()}
+      </div>
+      <ul class="list-group list-group-flush">
+          <li class="list-group-item"> ${manager.getId()}</li>
+          <li class="list-group-item">${manager.getEmail()}</li>
+          <li class="list-group-item">${manager.getOfficeNumber()}</li>
+      </ul>
+  </div>
+</div>
+`;
+};
+
+const generateEngineer = engineer => {
+  return `
+<div class=" cardT col-sm-4">
+<div class="card " style="width: 16rem;">
+  <div class="card-header" style="height: 5rem;">
+     ${engineer.getName()}
+     ${engineer.getRole()}
+  </div>
+  <ul class="list-group list-group-flush">
+      <li class="list-group-item"> ${engineer.getId()}</li>
+      <li class="list-group-item">${engineer.getEmail()}</li>
+      <li class="list-group-item">${engineer.getGitHub()}</li>
+  </ul>
+</div>
+</div>
+`;
+};
+
+const generateIntern = intern => {
+  return `
+<div class=" cardT col-sm-4">
+<div class="card " style="width: 16rem;">
+  <div class="card-header" style="height: 5rem;">
+     ${intern.getName()}
+     ${intern.getRole()}
+  </div>
+  <ul class="list-group list-group-flush">
+      <li class="list-group-item"> ${intern.getId()}</li>
+      <li class="list-group-item">${intern.getEmail()}</li>
+      <li class="list-group-item">${intern.getSchool()}</li>
+  </ul>
+</div>
+</div>
+`;
+};
+
+
 function profileCards (data) {
     return `
     <!DOCTYPE html>
@@ -27,16 +83,9 @@ function profileCards (data) {
       <div class="row" id="cardsTeam">
   
     <div class=" cardT col-sm-4">
-        <div class="card " style="width: 16rem;">
-            <div class="card-header" style="height: 5rem;">
-            ${data.questionAdd}
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"> ${data.name}</li>
-                <li class="list-group-item">${data.id}</li>
-                <li class="list-group-item">${data.email}</li>
-            </ul>
-        </div>
+    ${generateManager()}
+    ${generateEngineer()}
+    ${generateIntern()}
     </div>
       
       </body>
