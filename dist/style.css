@@ -1,25 +1,31 @@
 #headerJumbo{
-    background-color: gray;
-    height: 100px;
+   background-color: rgb(82, 80, 80);
+   height: 100px;
    text-align:center ;
    color: white;
-   margin-bottom:30px;
+   
+   padding: 10px;
     
 }
 
 #cardsTeam{
     margin:20px;
     padding: 5px;
+    
 
 }
 
 .card {
     padding: 5px;
+    background-color: rgba(209, 209, 252, 0.986);
+
+    
 }
 .cardT {
     display: flex;
     justify-content:space-around;
     padding: 5px;
+   
 }
 
 .card-header{
@@ -27,4 +33,8 @@
     color: white;
     font-weight: bold;
     padding: 20px;
+}
+
+.listItem {
+    font-weight: bold;
 }
