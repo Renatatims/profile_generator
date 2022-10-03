@@ -34,7 +34,7 @@ function profileCards (data) {
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"> ${data.name}</li>
                 <li class="list-group-item">${data.id}</li>
-                <li class="list-group-item">${data.e-mail}</li>
+                <li class="list-group-item">${data.email}</li>
             </ul>
         </div>
     </div>
