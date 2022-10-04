@@ -97,7 +97,7 @@ function userInput() {
 
 // Function to write Profile file
 function writeToFile(file, data) {
-	fs.writeFile("teamProfile.html", data, (err) => {
+	fs.writeFile("./dist/teamProfile.html", data, (err) => {
 		err ? console.log(err) : console.log("Your team Profile html was generated!");
 	})
 };
