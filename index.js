@@ -37,7 +37,16 @@ const questions = [
 	{
 		type: 'input',
 		message: "What is the employee's e-mail adress?",
-		name: 'email'
+		name: 'email',
+		// Validate user's e-mail input - verifys if @ is included
+		validate: (answer) => {
+			const valid = answer.match (/^[A-Za-z0-9+_.-]+@(.+)$/);
+			if (valid){
+				return true;
+			} else{
+				return "Please enter a valid email"
+			}
+		}
 	},
 	{
 		type: 'input',
