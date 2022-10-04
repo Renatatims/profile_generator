@@ -4,7 +4,7 @@ function generateProfiles(data) {
   // Generate Manager Function
   function generateManager(manager) {
     return `
-   <div class=" cardT col-sm-4">
+   <div class=" cardT col align-self-center">
     <div class="card " style="width: 16rem;">
       <div class="card-header" style="height: 5rem;">
          ${manager.getName()}
@@ -31,7 +31,7 @@ function generateProfiles(data) {
   // Generate Engineer Function
   function generateEngineer(engineer) {
     return `
-		<div class=" cardT col-sm-4">
+		<div class=" cardT col align-self-center">
 			<div class="card " style="width: 16rem;">
 				<div class="card-header" style="height: 5rem;">
           ${engineer.getName()}
@@ -57,7 +57,7 @@ function generateProfiles(data) {
   //Generate Intern Function
   function generateIntern(intern) {
     return `
-    <div class=" cardT col-sm-4">
+    <div class=" cardT col align-self-center">
       <div class="card " style="width: 16rem;">
         <div class="card-header" style="height: 5rem;">
         ${intern.getName()}
@@ -127,9 +127,10 @@ function profileCards(data) {
           </div>
         </div>
       </header>
-
-    <div class="row" id="cardsTeam">
-    ${generateProfiles(data)}         
+    <div class ="container">
+      <div class="row justify-content-center" id="cardsTeam">
+      ${generateProfiles(data)}         
+      </div>
     </div>
       
   </body>

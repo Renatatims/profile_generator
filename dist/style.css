@@ -9,23 +9,22 @@
 }
 
 #cardsTeam{
-    margin:20px;
+    margin:40px;
     padding: 5px;
     
 
 }
 
 .card {
-    padding: 5px;
+   
     background-color: rgba(209, 209, 252, 0.986);
-    box-shadow: 2px 2px 2px 2px rgba(165, 165, 233, 0.986);
+    box-shadow: 2px 2px 2px 2px rgba(114, 114, 117, 0.986);
 
     
 }
+
 .cardT {
-    display: flex;
-    justify-content:space-around;
-    padding: 5px;
+    padding: 10px;
    
 }
 

@@ -71,8 +71,8 @@ function userInput() {
 
 // Function to write README file
 function writeToFile(file, data) {
-	fs.writeFile("file.html", data, (err) => {
-		err ? console.log(err) : console.log("Your" + file + "was generated!");
+	fs.writeFile("teamProfile.html", data, (err) => {
+		err ? console.log(err) : console.log("Your team Profile html was generated!");
 	})
 };
 
