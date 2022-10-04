@@ -10,13 +10,23 @@ describe ('TestManager', () => {
 
 
 //Testing Manager's getOfficeNumber()
-describe ("Test Manager's OfficeNumber", () => {
-    it ("should create an object with an Office Number ", () => {
+describe ("Test Manager's OfficeNumber property", () => {
+    it ("should return a Number ", () => {
     const officeNumber = 111-111-1111;
     const obj = new TestManager("Employee Name", 10, "employee@gmail.com", officeNumber);
     expect (obj.officeNumber).toEqual(officeNumber);
 })
 });
+
+//Testing Manager's getOfficeNumber()
+describe ("getOfficeNumber() Method", () => {
+    it ("should return an Office Number", () => {
+    const officeNumber = 111-111-1111;
+    const obj = new TestManager("Employee Name", 10, "employee@gmail.com", officeNumber);
+    expect (obj.getOfficeNumber()).toEqual(officeNumber);
+})
+});
+
 
 // Testing Manager's Role
 describe ("Test Manager's role", () => {
