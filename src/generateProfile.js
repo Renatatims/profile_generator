@@ -21,7 +21,7 @@ function generateProfiles(data) {
       <ul class="list-group list-group-flush">
           <li class="list-group-item"><span class="listItem">ID: </span>${manager.getId()}</li>
           <li class="list-group-item"><span class="listItem">e-mail: </span><a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
-          <li class="list-group-item"><span class="listItem">Office Number: </span>${manager.getOfficeNumber()}</li>
+          <li class="list-group-item"><span class="listItem">Phone: </span>${manager.getOfficeNumber()}</li>
       </ul>
   </div>
 </div>
