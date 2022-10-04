@@ -5,7 +5,8 @@
   ## Description
   This application generates profile summaries for each person based on user's input in the terminal.
   
-  Full Demo video available at: https://drive.google.com/file/d/1LeUrsdYMqrQm8KUMRW-BMrCszAK05tq6/view
+  Full Demo video available at: 
+  https://drive.google.com/file/d/1d51u_WBvh5qVuC0AfWO0IbnWD9ZQrinE/view
 
   ![Preview](/dist/assets/screenshots/Capture1.PNG)
   
