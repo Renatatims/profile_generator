@@ -42,7 +42,7 @@
  ### Terminal - user input example below:
 
  
-  ![Demo](/dist/assets/screenshots/Capture2.png)
+  ![Demo](/dist/assets/screenshots/Capture2.PNG)
  
 
   ## Features
