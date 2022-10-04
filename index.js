@@ -75,7 +75,7 @@ const questions = [
 	{
 		type: 'list',
 		message: "Please select another employee",
-		choices: ["Add one more employee", "No more additions"],
+		choices: ["Add one more employee", "Exit: No more additions and please generate Team Profile!"],
 		name: 'questionAdd',
 	},
 ]
