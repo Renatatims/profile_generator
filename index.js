@@ -43,9 +43,9 @@ const questions = [
 		type: 'input',
 		message: "What is the manager's office number?",
 		name: 'officeNumber',
-		// Validate the user's answers - only allows numbers 
+		// Validate the user's answers - only allows numbers and dashes
 		validate: (answer) => {
-			const valid = answer.match (/^[0-9]\d*$/);
+			const valid = answer.match (/^[0-9\- ]+$/);
 			if (valid) {
 				return true;
 			} else{
@@ -87,7 +87,7 @@ function userInput() {
 };
 
 // Function to write Profile file
-function writeToFile(data) {
+function writeToFile(file, data) {
 	fs.writeFile("teamProfile.html", data, (err) => {
 		err ? console.log(err) : console.log("Your team Profile html was generated!");
 	})
