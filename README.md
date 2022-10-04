@@ -4,9 +4,11 @@
 
   ## Description
   This application generates profile summaries for each person based on user's input in the terminal.
+  
+  Full Demo video available at: https://drive.google.com/file/d/1LeUrsdYMqrQm8KUMRW-BMrCszAK05tq6/view
 
-  ![gifDemo](screenshots/gifDemo.gif)
-
+  ![Preview](/dist/assets/screenshots/Capture1.PNG)
+  
   ## Table of Contents
   - [Installation](#installation)
   - [Usage](#usage)
@@ -30,9 +32,10 @@
   ````
 
   ## Usage
-  The application will prompt the user information about the team members. Once all the questions are answered, then a html file is generated with the following info: nam, employee ID, email address and office number.
+  The application will prompt the user information about the team members. Once all the questions are answered, then a html file is generated with the following info: name, employee ID, email address and office number.
 
-  ![Preview](screenshots/Capture1.PNG)
+  ![Demo](/dist/assets/screenshots/Capture2.png)
+ 
 
   ## Features
   1. HTML file is generated with profile information of each employee. The user have the option to select which employee to include.
