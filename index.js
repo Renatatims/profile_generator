@@ -7,7 +7,6 @@ const Engineer = require ("./lib/Engineer");
 const Intern = require ("./lib/Intern");
 
 
-
 const questions = [
 	{
 		type: 'list',
@@ -19,7 +18,16 @@ const questions = [
 	{
 		type: 'input',
 		message: "What is the employee's name?",
-		name: 'name'
+		name: 'name',
+		// Validate the user's answers - only allows Letters and space 
+		validate: (answer) => {
+			const valid = answer.match (/^[a-zA-Z\s]+$/);
+			if (valid){
+				return true;
+			} else{
+				return "Please enter a valid name"
+			}
+		}
 	},
 	{
 		type: 'input',
@@ -35,6 +43,15 @@ const questions = [
 		type: 'input',
 		message: "What is the manager's office number?",
 		name: 'officeNumber',
+		// Validate the user's answers - only allows numbers 
+		validate: (answer) => {
+			const valid = answer.match (/^[0-9]\d*$/);
+			if (valid) {
+				return true;
+			} else{
+				return "Please enter a valid number"
+			}
+		},
 		when: function (answer){
 			return answer.role === "Manager";
 		}
@@ -69,8 +86,8 @@ function userInput() {
 
 };
 
-// Function to write README file
-function writeToFile(file, data) {
+// Function to write Profile file
+function writeToFile(data) {
 	fs.writeFile("teamProfile.html", data, (err) => {
 		err ? console.log(err) : console.log("Your team Profile html was generated!");
 	})
