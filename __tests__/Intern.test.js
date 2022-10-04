@@ -8,13 +8,22 @@ describe ('TestIntern', () => {
 })
 });
 
-
-//Testing Intern's getSchool()
-describe ("Test Intern's school", () => {
-    it ("should create an object with intern's school", () => {
+//Testing Intern's School - Property
+describe ("Test Intern's school property", () => {
+    it ("should return intern's school", () => {
     const school = "School";
     const obj = new TestIntern("Employee Name", 10, "employee@gmail.com", school);
     expect (obj.school).toEqual(school);
+})
+});
+
+
+//Testing Intern's getSchool() - Method
+describe ("getschool() method", () => {
+    it ("should return intern's school", () => {
+    const school = "School";
+    const obj = new TestIntern("Employee Name", 10, "employee@gmail.com", school);
+    expect (obj.getSchool()).toEqual(school);
 })
 });
 
